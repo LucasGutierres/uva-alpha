@@ -34,6 +34,19 @@ body {
   transition: 0.3s;
 }
 
+.sidenav form {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav input {
+	margin-bottom: 16px;
+}
+
 .sidenav a:hover {
   color: #f1f1f1;
 }
@@ -55,11 +68,18 @@ body {
 <body>
 
 <div id="mySidenav" class="sidenav">
-  <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+	<form>
+		<input type="checkbox" id="sensor1" name="sensor1" value="fogo">
+		<label for="sensor1">FOGO</label><br>
+		<input type="checkbox" id="sensor2" name="sensor2" value="eletrico">
+		<label for="sensor2">Elétrico</label><br>
+		<input type="checkbox" id="sensor3" name="sensor3" value="agua">
+		<label for="sensor3">Água</label><br>
+		<input type="checkbox" id="sensor4" name="sensor4" value="presenca">
+		<label for="sensor4">Presença</label><br>
+		<input type="checkbox" id="sensor5" name="sensor5" value="tranca">
+		<label for="sensor5">Tranca</label><br>
+	</form>
 </div>
 
 <div class="main">
