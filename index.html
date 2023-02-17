@@ -79,7 +79,7 @@ body {
 <body>
 
 <div id="mySidenav" class="sidenav">
-	<form>
+	<form id="sensores">
 		<input type="checkbox" id="sensor1" name="sensor1" value="fogo">
 		<label for="sensor1">FOGO</label><br>
 		<input type="checkbox" id="sensor2" name="sensor2" value="eletrico">
@@ -94,13 +94,13 @@ body {
 </div>
 
 <div class="main">
-	<h3>O se prêmio vai custar:</h3>
-	<h2>R$ 00,00</h2>
+	<h3>O seu prêmio vai custar:</h3>
+	<h2 id="premio">R$ 00,00</h2>
 	<!-- <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span> -->	
 </div>
 <div class="item-list">
 	<h3>Escolha suas coberturas:</h3>
-	<form>
+	<form id="coberturas">
 		<input type="checkbox" id="cobertura1" name="cobertura1" value="basico">
 		<label for="cobertura1">Incêndio, Explosão e Raio</label><br>
 		<input type="checkbox" id="cobertura2" name="cobertura2" value="eletrico">
@@ -114,7 +114,7 @@ body {
 	</form>
 </div>
 
-<script>
+<!--script>
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
 }
@@ -122,7 +122,8 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
-</script>
+</script-->
    
 </body>
+<script src="./main.js"></script>
 </html> 
