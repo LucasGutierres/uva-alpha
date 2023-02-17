@@ -8,6 +8,23 @@ var coberturas = [
 	document.getElementById('cobertura4'),
 	document.getElementById('cobertura5')
 ]
+var sensores = [
+	document.getElementById('sensor1'),
+	document.getElementById('sensor2'),
+	document.getElementById('sensor3'),
+	document.getElementById('sensor4'),
+	document.getElementById('sensor5')
+]
+
+function calculo_d() {
+	let d = 0;
+	for (let i = 0; i<sensores.length; i++){
+		if (sensores[i].checked) {
+			d += 2
+		}
+	}
+	return d
+}
 
 function calculo_p() {
 	let p = 0;
@@ -19,7 +36,7 @@ function calculo_p() {
 	return p
 }
 
-var d_value = 2;
+var d_value = calculo_d();
 var p_value_crude = 10+calculo_p();
 var p_value = p_value_crude-d_value;
 
