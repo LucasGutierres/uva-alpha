@@ -40,8 +40,14 @@ var d_value = calculo_d();
 var p_value_crude = 10+calculo_p();
 var p_value = p_value_crude-d_value;
 
-premioDisplay.textContent = "R$ " + String(p_value.toFixed(2));
-descontoDisplay.textContent = "Seu desconto é de R$ " + d_value;
-premiondDisplay.textContent = "O valor original é de R$" + p_value_crude
+function new_p() {
+	d_value = calculo_d();
+	p_value_crude = 15+calculo_p();
+	p_value = p_value_crude-d_value;
 
-//console.log(premioDisplay.textContent);
+	premioDisplay.textContent = "R$ " + String(p_value.toFixed(2));
+	descontoDisplay.textContent = "Seu desconto é de R$ " + d_value;
+	premiondDisplay.textContent = "O valor original é de R$" + p_value_crude
+}
+
+new_p();
