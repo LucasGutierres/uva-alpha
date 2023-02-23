@@ -1,20 +1,20 @@
 var premioDisplay = document.getElementById('premio')
 var descontoDisplay = document.getElementById('desconto')
 var premiondDisplay = document.getElementById('premio_nd')
-var coberturas = [
-	document.getElementById('cobertura1'),
-	document.getElementById('cobertura2'),
-	document.getElementById('cobertura3'),
-	document.getElementById('cobertura4'),
-	document.getElementById('cobertura5')
-]
-var sensores = [
-	document.getElementById('sensor1'),
-	document.getElementById('sensor2'),
-	document.getElementById('sensor3'),
-	document.getElementById('sensor4'),
-	document.getElementById('sensor5')
-]
+var coberturas = []
+var sensores = []
+
+function get_options(id, name) {
+	let selOptions = document.getElementById(id).children
+	let c = []
+
+	for (let i = 0; i<selOptions.length; i++){
+		if (selOptions[i].tagName == name) {
+			c.push(selOptions[i])
+		}
+	}
+	return c;
+}
 
 function calculo_d() {
 	let d = 0;
@@ -36,11 +36,17 @@ function calculo_p() {
 	return p
 }
 
+function set_options() {
+	coberturas = get_options('sel_coberturas', 'INPUT');
+	sensores = get_options('sel_sensores', 'INPUT')
+}
+
 var d_value = calculo_d();
 var p_value_crude = 10+calculo_p();
 var p_value = p_value_crude-d_value;
 
 function new_p() {
+	set_options();
 	d_value = calculo_d();
 	p_value_crude = 15+calculo_p();
 	p_value = p_value_crude-d_value;
@@ -49,5 +55,7 @@ function new_p() {
 	descontoDisplay.textContent = "Seu desconto é de R$ " + d_value;
 	premiondDisplay.textContent = "O valor original é de R$" + p_value_crude
 }
+
+document.body.addEventListener('change', new_p);
 
 new_p();
