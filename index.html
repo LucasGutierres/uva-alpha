@@ -21,17 +21,14 @@
 				<div class="col-md-8">
 					<div class="main">
 						<h4>O seu prêmio vai custar:</h4>
-						<h3 id="premio">R$ 00,00</h3>
-						<h5 id="desconto"></h5>
-						<h5 id="premio_nd"></h5>
+						<h3 id="premio">R$ 15.00</h3>
+						<h5 id="desconto">Seu desconto é de 0%</h5>
+						<h5 id="premio_nd">O valor original é de R$15</h5>
 					</div>
-					<form role="form">
-						<!--button type="button" class="btn btn-primary" onclick="new_p()">
-							Calcular
-						</button-->
-						<div class="checkbox" id="sel_sensores">
+					<form role="form" class="checkbox" class="sensores">
+						<div id="sel_sensores" class="sensores" style="width: fit-content;">
 							<input type="checkbox" id="sensor1" name="sensor1" value="fogo"> 
-								<label for="sensor1">FOGO</label>
+								<label for="sensor1">Fogo</label>
 							<input type="checkbox" id="sensor2" name="sensor2" value="eletrico"> 
 								<label for="sensor2">Elétrico</label>
 							<input type="checkbox" id="sensor3" name="sensor3" value="agua"> 
@@ -42,8 +39,8 @@
 								<label for="sensor5">Tranca</label>
 						</div>
 					</form>
-					<form role="form">
-						<div class="checkbox" id="sel_coberturas">						 
+					<form role="form" class="checkbox">
+						<div id="sel_coberturas">						 
 							<input type="checkbox" id="cobertura1" name="cobertura1" value="basico"> 
 								<label for="cobertura1">Incêndio, Explosão e Raio</label><br>
 							<input type="checkbox" id="cobertura2" name="cobertura2" value="eletrico">

@@ -41,18 +41,14 @@ function set_options() {
 	sensores = get_options('sel_sensores', 'INPUT')
 }
 
-var d_value = calculo_d();
-var p_value_crude = 10+calculo_p();
-var p_value = p_value_crude-d_value;
-
 function new_p() {
 	set_options();
-	d_value = calculo_d();
-	p_value_crude = 15+calculo_p();
-	p_value = p_value_crude-d_value;
+	let d_value = calculo_d();
+	let p_value_crude = 15+calculo_p();
+	let p_value = p_value_crude*(100-d_value)/100;
 
 	premioDisplay.textContent = "R$ " + String(p_value.toFixed(2));
-	descontoDisplay.textContent = "Seu desconto é de R$ " + d_value;
+	descontoDisplay.textContent = "Seu desconto é de " + d_value + "%"
 	premiondDisplay.textContent = "O valor original é de R$" + p_value_crude
 }
 
