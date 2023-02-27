@@ -4,6 +4,8 @@ var premiondDisplay = document.getElementById('premio_nd')
 var coberturas = []
 var sensores = []
 
+var v_cobertura = document.getElementById('v_cobertura')
+
 function get_options(id, name) {
 	let selOptions = document.getElementById(id).children
 	let c = []
@@ -53,5 +55,11 @@ function new_p() {
 }
 
 document.body.addEventListener('change', new_p);
+
+v_cobertura.oninput = function(){
+	let c = Number(v_cobertura.value)*10000
+	let cd = String(c).replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+	document.getElementById('v_cobertura_display').textContent = "Cobertura de R$ " + cd + ".00"
+}
 
 new_p();
