@@ -1,10 +1,15 @@
-.checkbox {
-	padding-top: 2%;
-}
-
 .sensores {
+	padding-bottom: 2%;
+	padding-top: 4%;
 	margin: auto;
 	width: fit-content;
+}
+
+.coberturas {
+	padding-top: 8%;
+	margin: auto;
+	width: 80%;
+	min-width: fit-content;
 }
 
 .main {

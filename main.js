@@ -4,7 +4,7 @@ var premiondDisplay = document.getElementById('premio_nd')
 var coberturas = []
 var sensores = []
 
-var v_cobertura = document.getElementById('v_cobertura')
+var v_ind = document.getElementById('v_indenização')
 
 function get_options(id, name) {
 	let selOptions = document.getElementById(id).children
@@ -22,7 +22,7 @@ function calculo_d() {
 	let d = 0;
 	for (let i = 0; i<sensores.length; i++){
 		if (sensores[i].checked) {
-			d += 2
+			d += 5
 		}
 	}
 	return d
@@ -56,10 +56,10 @@ function new_p() {
 
 document.body.addEventListener('change', new_p);
 
-v_cobertura.oninput = function(){
-	let c = Number(v_cobertura.value)*10000
+v_ind.oninput = function(){
+	let c = Number(v_ind.value)*10000
 	let cd = String(c).replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-	document.getElementById('v_cobertura_display').textContent = "Cobertura de R$ " + cd + ".00"
+	document.getElementById('v_indenização_display').textContent = "Indenização de R$ " + cd + ".00"
 }
 
 new_p();
