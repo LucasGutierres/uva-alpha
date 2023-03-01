@@ -22,7 +22,7 @@ function calculo_d() {
 	let d = 0;
 	for (let i = 0; i<sensores.length; i++){
 		if (sensores[i].checked) {
-			d += 5
+			d = sensores[i].value
 		}
 	}
 	return d
