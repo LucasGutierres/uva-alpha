@@ -32,7 +32,7 @@ function calculo_p() {
 	let p = 0;
 	for (let i = 0; i<coberturas.length; i++) {
 		if (coberturas[i].checked) {
-			p += 5
+			p += Number(coberturas[i].value)
 		}
 	}
 	return p
@@ -49,7 +49,7 @@ function new_p() {
 	let p_value_crude = 15+calculo_p();
 	let p_value = p_value_crude*(100-d_value)/100;
 
-	premioDisplay.textContent = "R$ " + String(p_value.toFixed(2));
+	premioDisplay.textContent = "R$ " + p_value.toFixed(2);
 	descontoDisplay.textContent = "Seu desconto é de " + d_value + "%"
 	premiondDisplay.textContent = "O valor original é de R$" + p_value_crude
 }
@@ -57,7 +57,7 @@ function new_p() {
 document.body.addEventListener('change', new_p);
 
 v_ind.oninput = function(){
-	let c = Number(v_ind.value)*10000
+	let c = v_ind.value*10000
 	let cd = String(c).replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 	document.getElementById('v_indenização_display').textContent = "Indenização de R$ " + cd + ".00"
 }
