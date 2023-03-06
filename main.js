@@ -46,7 +46,7 @@ function set_options() {
 function new_p() {
 	set_options();
 	let d_value = calculo_d();
-	let p_value_crude = 15+calculo_p();
+	let p_value_crude = calculo_p();
 	let p_value = p_value_crude*(100-d_value)/100;
 
 	premioDisplay.textContent = "R$ " + p_value.toFixed(2);
